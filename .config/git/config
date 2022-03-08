@@ -1,0 +1,35 @@
+[user]
+	name = minguu42
+	email = minguu42@gmail.com
+
+[core]
+	editor = nano
+
+[credential]
+	helper = cache --timeout=8640
+
+[alias]
+        ad = add
+        br = branch
+        co = checkout
+        cm = commit
+        cma = commit --amend
+        ft = fetch
+        mr = merge
+        lg = log --oneline -n 10 --graph
+        ph = push
+        pho = push -u origin HEAD
+        pl = pull
+        plo = pull origin main
+        pro = remote prune origin
+        st = status -sb
+        sw = switch
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = false
+
+[ghq]
+	root = ~/ghq/
