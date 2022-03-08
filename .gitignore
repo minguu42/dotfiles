@@ -1,6 +1,9 @@
+# 全てのファイルを管理対象外にする
 /*
 /.**
 
+# 管理するファイルのみ管理対象に加える
+!.Brewfile
 !.gitignore
 !LICENSE
 !README.md
