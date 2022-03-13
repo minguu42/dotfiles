@@ -14,6 +14,7 @@
         co = checkout
         cm = commit
         cma = commit --amend
+        df = diff
         ft = fetch
         mr = merge
         lg = log --oneline -n 10 --graph
@@ -22,6 +23,7 @@
         pl = pull
         plo = pull origin main
         pro = remote prune origin
+        rs = reset
         st = status -sb
         sw = switch
 
