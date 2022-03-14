@@ -1,7 +1,6 @@
 # =====================================
 # おまじない
 # =====================================
-tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -12,13 +11,14 @@ tap "homebrew/core"
 # CLI ツール
 # =====================================
 brew "gh"                                # GitHub
-brew "ghq"                               # リポジトリ管理用
+brew "ghq"                               # リポジトリ管理用ツール
 brew "git"                               # Git
 brew "go"                                # Go
 brew "jq"                                # JSON 表示、加工用ツール
 brew "mysql-client"                      # MySQL クライアントツール
 brew "nodenv"                            # Node.js のバージョン管理ツール
 brew "peco"                              # シェルで自由に飛ぶためのツール
+brew "starship"                          # プロンプト設定ツール
 brew "tree"                              # ディレクトリ構成を表示するツール
 
 # =====================================
