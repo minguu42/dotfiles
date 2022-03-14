@@ -9,5 +9,6 @@
 !.config/git/ignore
 !.Brewfile
 !.gitignore
+!.zshrc
 !LICENSE
 !README.md
