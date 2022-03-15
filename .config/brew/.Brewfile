@@ -30,6 +30,7 @@ cask "docker"                            # Docker Desktop for Mac
 cask "font-jetbrains-mono"               # エディタ/IDE 用のフォント
 cask "font-jetbrains-mono-nerd-font"     # ターミナル用のフォント
 cask "google-chrome"                     # Google Chrome
+cask "google-cloud-sdk"                  # Google Cloud SDK
 cask "google-drive"                      # Google Drive
 cask "jetbrains-toolbox"                 # JetBrains 製品管理用ツール
 cask "notion"                            # Notion

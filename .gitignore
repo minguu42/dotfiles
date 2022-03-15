@@ -4,12 +4,13 @@
 
 # 管理するファイルのみ管理対象に加える
 !.config/
+!.config/brew/
+!.config/brew/.Brewfile
 !.config/gh/
 !.config/gh/config.yml
 !.config/git/
 !.config/git/config
 !.config/git/ignore
-!.Brewfile
 !.gitignore
 !.zshrc
 !LICENSE
