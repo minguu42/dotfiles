@@ -1,3 +1,5 @@
+autoload -Uz compinit && compinit
+
 if [ "$TERMINAL_EMULATOR" != "JetBrains-JediTerm" ]
 then
    ZSH_TMUX_AUTOSTART=true
@@ -12,6 +14,9 @@ export CPPFLAGS="-I/usr/local/opt/mysql-client/include" # For compilers
 eval "$(gh completion -s zsh)"
 eval "$(nodenv init -)"
 eval "$(starship init zsh)"
+
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 
 alias b="brew"
 alias cl="clear"
