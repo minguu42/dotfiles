@@ -9,6 +9,7 @@ export PATH="/usr/local/opt/mysql-client/bin:$PATH"     # MySQL client
 export GOPATH=$(go env GOPATH)                          # Go
 export LDFLAGS="-L/usr/local/opt/mysql-client/lib"      # For compilers
 export CPPFLAGS="-I/usr/local/opt/mysql-client/include" # For compilers
+export HOMEBREW_BUNDLE_FILE="$HOME/.config/brew/.Brewfile"
 
 # =====================================
 # 履歴
