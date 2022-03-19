@@ -14,5 +14,6 @@
 !.config/starship.toml
 !.gitignore
 !.zshrc
+!install.sh
 !LICENSE
 !README.md
