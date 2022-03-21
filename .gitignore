@@ -15,5 +15,6 @@
 !.gitignore
 !.zshrc
 !install.sh
+!latest.rayconfig
 !LICENSE
 !README.md
