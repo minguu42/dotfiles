@@ -1,1 +1,30 @@
-add_newline = false  # プロンプトの間に空行を挿入しない
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$docker_context\
+$container\
+$memory_usage\
+$cmd_duration\
+$line_break\
+$jobs\
+$character"""
+add_newline = false
+
+[username]
+show_always = true
+
+[directory]
+truncation_length = 5
+truncation_symbol = ".../"
+
+[character]
+success_symbol = "[\\$](bold green) "
+error_symbol = "[\\$](bold red) "
