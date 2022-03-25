@@ -10,6 +10,8 @@ tap "homebrew/core"
 # =====================================
 # CLI ツール
 # =====================================
+brew "bash"                              # Bash
+brew "bash-completion@2"                 # Bash の補完スクリプト
 brew "gh"                                # GitHub
 brew "ghq"                               # リポジトリ管理用ツール
 brew "git"                               # Git
