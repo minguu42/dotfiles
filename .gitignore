@@ -12,6 +12,8 @@
 !.config/git/config
 !.config/git/ignore
 !.config/starship.toml
+!.bash_profile
+!.bashrc
 !.gitignore
 !.zshrc
 !install.sh
