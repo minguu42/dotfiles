@@ -9,23 +9,23 @@
 	helper = cache --timeout=8640
 
 [alias]
-        ad = add
-        br = branch
-        co = checkout
-        cm = commit
+        ad  = add
+        br  = branch
+        cm  = commit
         cma = commit --amend
-        df = diff
-        ft = fetch
-        mr = merge
-        lg = log --oneline -n 10 --graph
-        ph = push
-        pho = push -u origin HEAD
-        pl = pull
-        plo = pull origin main
-        pro = remote prune origin
-        rs = reset
-        st = status -sb
-        sw = switch
+        cme = commit --allow-empty --allow-empty-message -m ""
+        df  = diff
+        ft  = fetch
+        mg  = merge
+        lg  = log --max-count 15 --oneline --graph
+        ph  = push
+        pho = push ---set-upstream origin HEAD
+        pl  = pull
+        rt  = remote
+        rtp = remote prune origin
+        rs  = reset
+        st  = status --short --branch
+        sw  = switch
 
 [init]
 	defaultBranch = main
