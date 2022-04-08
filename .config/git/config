@@ -19,7 +19,7 @@
         mg  = merge
         lg  = log --max-count 15 --oneline --graph
         ph  = push
-        pho = push ---set-upstream origin HEAD
+        pho = push --set-upstream origin HEAD
         pl  = pull
         rt  = remote
         rtp = remote prune origin
