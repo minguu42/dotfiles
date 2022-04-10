@@ -13,7 +13,7 @@
         br  = branch
         cm  = commit
         cma = commit --amend
-        cme = commit --allow-empty --allow-empty-message -m ""
+        cme = commit --allow-empty -m "feat: 空コミット"
         df  = diff
         ft  = fetch
         mg  = merge
