@@ -108,3 +108,33 @@ sudo nano /etc/shells
 ```bash
 chsh -s /usr/local/bin/bash
 ```
+
+## Homebrew でのパッケージ管理
+
+パッケージ管理システムとして Homebrew を利用する。
+特に素早く macOS での開発環境を整えられるように Homebrew Bundle を利用する。
+
+具体的に実行するコマンドは以下のようになる。
+
+注意: 環境変数 `HOMEBREW_BUNDLE_FILE` の値は `Brewfile` へのパスである。
+
+```bash
+# インストールされているパッケージ一覧を表示する
+$ brew bundle list --all
+
+# パッケージを追加する
+$ nano $HOMEBREW_BUNDLE_FILE
+$ brew bundle --no-upgrade
+
+# パッケージの更新がないか確認する
+$ brew update
+$ brew bundle check --verbose 
+
+# パッケージを更新する
+$ brew bundle
+
+# 不要なパッケージをアンインストールする
+$ nano $HOMEBREW_BUNDLE_FILE
+$ brew bundle cleanup         # 確認
+$ brew bundle cleanup --force # 実行
+```
