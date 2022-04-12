@@ -9,6 +9,7 @@
 !.config/gh/
 !.config/gh/config.yml
 !.config/git/
+!.config/git/completion.bash
 !.config/git/config
 !.config/git/ignore
 !.config/starship.toml
