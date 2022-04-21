@@ -3,20 +3,16 @@ set -euo pipefail
 
 cd "$(dirname "$0")"
 
-if [[ ! -d "$HOME/.config" ]]; then
-  mkdir "$HOME/.config"
-fi
-
 if [[ ! -d "$HOME/.config/brew" ]]; then
-  mkdir "$HOME/.config/brew"
+  mkdir -p "$HOME/.config/brew"
 fi
 
 if [[ ! -d "$HOME/.config/gh" ]]; then
-  mkdir "$HOME/.config/gh"
+  mkdir -p "$HOME/.config/gh"
 fi
 
 if [[ ! -d "$HOME/.config/git" ]]; then
-  mkdir "$HOME/.config/git"
+  mkdir -p "$HOME/.config/git"
 fi
 
 for fd1 in .??*; do

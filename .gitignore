@@ -16,7 +16,6 @@
 !.bash_profile
 !.bashrc
 !.gitignore
-!.zshrc
 !install.sh
 !latest.rayconfig
 !LICENSE

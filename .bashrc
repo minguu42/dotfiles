@@ -1,4 +1,6 @@
 # エイリアス
+alias ..="cd .."
+alias ...="cd ..."
 alias b="brew"
 alias cl="clear"
 alias g="git"
