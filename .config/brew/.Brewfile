@@ -1,11 +1,11 @@
-### tap ###
+# tap
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/core"
 
-### formula ###
+# formula
 brew "bash"
 brew "bash-completion@2"
 brew "gh"
@@ -14,12 +14,13 @@ brew "git"
 brew "go"
 brew "jq"
 brew "mysql-client"
+brew "nano"
 brew "nodenv"
 brew "peco"
 brew "starship"
 brew "tree"
 
-### cask ###
+# cask
 cask "deepl"
 cask "discord"
 cask "docker"
@@ -40,6 +41,6 @@ cask "thunderbird"
 cask "visual-studio-code"
 cask "vivaldi"
 
-### mas ###
+# mas
 mas "Focus To-Do", id: 1258530160
 mas "LINE", id: 539883307
