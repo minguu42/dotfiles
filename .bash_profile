@@ -22,6 +22,7 @@ then
       [[ -r "${COMPLETION}" ]] && source "${COMPLETION}"
     done
   fi
+  unset HOMEBREW_PREFIX
 fi
 
 if [ -f ~/.bashrc ]; then
