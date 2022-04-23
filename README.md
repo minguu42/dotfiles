@@ -4,11 +4,32 @@
 
 ## セットアップ手順
 
-### 1. システム環境設定を変更する
+### 0. 最初にすること
 
-[macOS のシステム環境設定](./docs/mac_system_config.md)に従い、設定する。
+以下の2つのことを最初に行う。
 
-### 2. Homebrew でセットアップする
+- ` > この Mac について > ソフトウェア・アップデート...`
+- ` > Apple Store... > アップデート > すべてアップデート`
+
+### 1. 設定ファイルのセットアップ
+
+以下の一連のコマンドで `dotfiles` リポジトリをクローンする。
+
+```bash
+$ mkdir -p ~/ghq/github.com/minguu42
+$ git -C ~/ghq/github.com/minguu42 clone https://github.com/minguu42/dotfiles
+```
+
+そして、`install.sh` を実行する。
+
+
+```bash
+$ cd ~/ghq/github.com/minguu42
+$ chmod +x install.sh
+$ ./install.sh
+```
+
+### 2. パッケージのインストール
 
 以下のコマンドで Homebrew をインストールする。
 
@@ -16,22 +37,18 @@
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-以下の一連の手順で [.Brewfile](./.config/brew/.Brewfile) をダウンロードする。
-そして、必要なライブラリを一括でインストールする。
+そして、以下のコマンドで必要なパッケージを一括でインストールする。
 
 ```bash
-$ mkdir -p ~/.config/brew
-$ nano ~/.config/brew/.Brewfile
-$ export HOMEBREW_BUNDLE_FILE=~/.config/brew/.Brewfile
-$ brew bundle
+$ brew bundle install --file ~/.config/brew/.Brewfile
 ```
 
-### 3. ログインシェルを Bash に変更する
+### 3. ログインシェルの変更
 
 `/etc/shells` を以下のように書き換えて、Homebrew でインストールした Bash にパスを通す。
 
 ```bash
-sudo nano /etc/shells 
+sudo nano /etc/shells
 ```
 
 ```text
@@ -53,34 +70,4 @@ sudo nano /etc/shells
 
 ```bash
 chsh -s /usr/local/bin/bash
-```
-
-## Homebrew でのパッケージ管理
-
-パッケージ管理システムとして Homebrew を利用する。
-特に素早く macOS での開発環境を整えられるように Homebrew Bundle を利用する。
-
-具体的に実行するコマンドは以下のようになる。
-
-注意: 環境変数 `HOMEBREW_BUNDLE_FILE` の値は `Brewfile` へのパスである。
-
-```bash
-# インストールされているパッケージ一覧を表示する
-$ brew bundle list --all
-
-# パッケージを追加する
-$ nano $HOMEBREW_BUNDLE_FILE
-$ brew bundle --no-upgrade
-
-# パッケージの更新がないか確認する
-$ brew update
-$ brew bundle check --verbose
-
-# パッケージを更新する
-$ brew bundle
-
-# 不要なパッケージをアンインストールする
-$ nano $HOMEBREW_BUNDLE_FILE
-$ brew bundle cleanup         # 確認
-$ brew bundle cleanup --force # 実行
 ```
