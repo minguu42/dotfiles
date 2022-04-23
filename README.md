@@ -24,7 +24,7 @@ $ git -C ~/ghq/github.com/minguu42 clone https://github.com/minguu42/dotfiles
 
 
 ```bash
-$ cd ~/ghq/github.com/minguu42
+$ cd ~/ghq/github.com/minguu42/dotfiles
 $ chmod +x install.sh
 $ ./install.sh
 ```
