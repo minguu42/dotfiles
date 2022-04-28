@@ -2,6 +2,7 @@
 alias ..="cd .."
 alias ...="cd ..."
 alias b="brew"
+alias bb="brew bundle"
 alias cl="clear"
 alias g="git"
 alias d="docker"
