@@ -13,6 +13,7 @@ brew "ghq"
 brew "git"
 brew "go"
 brew "jq"
+brew "mas"
 brew "mysql-client"
 brew "nano"
 brew "nodenv"
@@ -39,7 +40,6 @@ cask "slack"
 cask "steam"
 cask "thunderbird"
 cask "visual-studio-code"
-cask "vivaldi"
 
 # mas
 mas "Focus To-Do", id: 1258530160
