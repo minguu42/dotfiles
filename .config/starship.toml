@@ -25,6 +25,10 @@ show_always = true
 truncation_length = 5
 truncation_symbol = ".../"
 
+[git_status]
+conflicted = "!?"
+up_to_date = "="
+
 [character]
 success_symbol = "[\\$](bold green) "
 error_symbol = "[\\$](bold red) "
