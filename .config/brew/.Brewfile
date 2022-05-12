@@ -41,5 +41,6 @@ cask "thunderbird"
 cask "visual-studio-code"
 
 # mas
+mas "Bitwarden", id: 1352778147
 mas "Focus To-Do", id: 1258530160
 mas "LINE", id: 539883307
