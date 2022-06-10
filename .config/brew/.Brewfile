@@ -8,6 +8,7 @@ tap "homebrew/core"
 # formula
 brew "bash"
 brew "bash-completion@2"
+brew "firebase-cli"
 brew "gh"
 brew "ghq"
 brew "git"
@@ -26,6 +27,7 @@ cask "deepl"
 cask "discord"
 cask "docker"
 cask "figma"
+cask "firefox"
 cask "font-jetbrains-mono"
 cask "font-jetbrains-mono-nerd-font"
 cask "google-chrome"
@@ -42,6 +44,5 @@ cask "thunderbird"
 cask "visual-studio-code"
 
 # mas
-mas "Bitwarden", id: 1352778147
 mas "Focus To-Do", id: 1258530160
 mas "LINE", id: 539883307
