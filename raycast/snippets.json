@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Gmail",
+    "text": "minguu42@gmail.com",
+    "keyword": "@@g"
+  },
+  {
+    "name": "iCloud",
+    "text": "akihurukawa@icloud.com",
+    "keyword": "@@i"
+  },
+  {
+    "name": "Outlook",
+    "text": "minguu42@outlook.jp",
+    "keyword": "@@o"
+  }
+]
