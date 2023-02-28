@@ -11,7 +11,6 @@ set -x VOLTA_HOME "$XDG_DATA_HOME/volta"
 # PATHを通す
 set -x PATH "$GOPATH/bin" $PATH
 set -x PATH "$VOLTA_HOME/bin" $PATH
-set -x PATH "$HOME/llvm/bin" $PATH
 
 alias b "brew"
 alias g "git"
