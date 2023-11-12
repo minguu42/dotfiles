@@ -30,6 +30,12 @@
 [init]
 	defaultBranch = main
 
+[commit]
+	verbose = true
+
+[merge]
+	conflictStyle = diff3
+
 [pull]
 	rebase = false
 

@@ -1,10 +1,3 @@
-# Powerlevel10kのインスタントプロンプトを有効にする
-# この処理は.zshrcファイルの一番上にある必要がある
-# ただし、コンソール入力を必要とする初期化処理はこの処理の上に書かれる必要がある
-if [[ -r "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "$HOME/.cache/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ### 環境変数
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -47,9 +40,9 @@ funciton select-history() {
 zle -N select-history
 
 ### 履歴
-export HISTFILE=$XDG_STATE_HOME/zsh/history # 履歴を保存するファイル
-export HISTSIZE=100000                      # メモリ上に保存する履歴のサイズ
-export SAVEHIST=1000000                     # 上述のファイルに保存する履歴のサイズ
+export HISTFILE="$XDG_STATE_HOME/zsh_history" # 履歴を保存するファイル
+export HISTSIZE=100000                        # メモリ上に保存する履歴のサイズ
+export SAVEHIST=1000000                       # 上述のファイルに保存する履歴のサイズ
 
 setopt inc_append_history # 実行時に履歴をファイルに追加していく
 setopt share_history      # 履歴を他のシェルとリアルタイム共有する
@@ -76,11 +69,11 @@ setopt auto_cd         # ディレクトリ名を入力した際に自動的に�
 setopt no_flow_control # ^S、^Qによるフローコントロールを無効化する
 
 [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # nvmをロードする
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
 
 ### プラグイン
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 ### プロンプト
-source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
-[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
+eval "$(starship init zsh)"
