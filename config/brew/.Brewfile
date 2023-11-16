@@ -37,6 +37,3 @@ cask "notion"
 cask "raycast"
 cask "ticktick"
 cask "vivaldi"
-
-# mas
-mas "LINE", id: 539883307
