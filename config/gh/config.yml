@@ -8,9 +8,7 @@ prompt: enabled
 pager:
 # Aliases allow you to create nicknames for gh commands
 aliases:
-  ic: issue create -w
-  ils: issue list
-  prc: pr create --title "$1" --body "$2"
-  prm: pr merge -m -d $1
-  prls: pr list
-  prch: pr checks $1
+  prc: pr create
+  prm: pr merge
+  prw: pr checks -i 5 --watch
+  prv: pr view
