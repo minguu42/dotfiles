@@ -5,6 +5,7 @@ tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
 
 # formula
+brew "awscli"
 brew "gh"
 brew "ghq"
 brew "git"
