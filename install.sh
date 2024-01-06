@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if type xcode-select >/dev/null; then
+if type xcode-select >/dev/null ; then
   echo "Command Line Tools for Xcode is already installed."
 else
   echo "Installing Command Line Tools for Xcode..."
@@ -10,7 +10,7 @@ fi
 
 INSTALL_DIR="${INSTALL_DIR:-$HOME/ghq/github.com/minguu42/dotfiles}"
 
-if [ -d "$INSTALL_DIR" ]; then
+if [[ -d "$INSTALL_DIR" ]] ; then
   echo "Updating dotfiles..."
   git -C "$INSTALL_DIR" pull
 else
@@ -18,14 +18,14 @@ else
   git clone https://github.com/minguu42/dotfiles "$INSTALL_DIR"
 fi
 
-if type brew >/dev/null; then
+if type brew >/dev/null ; then
   echo "Homebrew is already installed."
 else
   echo "Installing Homebrew..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-ehco "Updating Homebrew..."
+echo "Updating Homebrew..."
 brew update
 
 echo "Installing dependencies from Homebrew and Homebrew Cask..."
