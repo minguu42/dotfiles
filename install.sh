@@ -32,3 +32,13 @@ echo "Installing dependencies from Homebrew and Homebrew Cask..."
 brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile" --no-lock
 
 /bin/bash "$INSTALL_DIR/deploy.sh"
+
+zsh_path="$(brew --prefix)/bin/zsh"
+if [[ -f "$zsh_path" && "$SHELL" != "$zsh_path" ]] ; then
+  if ! grep -q "$zsh_path" /etc/shells ; then
+    echo "Add $zsh_path to /etc/shells"
+    echo "$zsh_path" | sudo tee -a /etc/shells
+  fi
+  echo "Change login shell to $zsh_path"
+  chsh -s "$zsh_path"
+fi
