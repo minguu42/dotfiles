@@ -1,11 +1,10 @@
-# tap
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "sqldef/sqldef"
 
-# formula
 brew "awscli"
+brew "direnv"
 brew "gh"
 brew "ghq"
 brew "git"
@@ -25,7 +24,6 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "sqldef/sqldef/mysqldef"
 
-# cask
 cask "deepl"
 cask "docker"
 cask "drawio"

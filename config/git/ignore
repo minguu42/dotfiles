@@ -1,4 +1,5 @@
-.private
+### General ###
+.private/
 
 ### macOS ###
 # General
@@ -55,3 +56,7 @@ Temporary Items
 # Ignore all local history of files
 .history
 .ionide
+
+### direnv ###
+.direnv
+.envrc
