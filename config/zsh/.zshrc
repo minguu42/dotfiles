@@ -75,5 +75,7 @@ export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_history"
 source "$(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "$(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
+eval "$(direnv hook zsh)"
+
 ### プロンプト
 eval "$(starship init zsh)"
