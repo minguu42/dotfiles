@@ -12,12 +12,18 @@ export NVM_DIR="$XDG_DATA_HOME/nvm"
 export PATH="$PATH:$GOPATH/bin"
 
 ### エイリアス
-alias b='brew'
-alias g='git'
-alias d='docker'
-alias dc='docker compose'
-alias m='make'
-alias n='npm run'
+alias b="brew"
+alias d="docker"
+alias dc="docker container"
+alias di="docker image"
+alias dm="docker compose"
+alias dn="docker network"
+alias dv="docker volume"
+alias g="git"
+alias grep="ggrep"
+alias m="make"
+alias n="npm run"
+alias sed="gsed"
 
 ### キーバインド
 bindkey '^g' select-repository
