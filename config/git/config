@@ -12,10 +12,8 @@
         ad  = add
         br  = branch
         cm  = commit
-        cma = commit --amend
         cme = commit -m '空コミット' --allow-empty
         df  = diff
-        dfs = diff --staged
         ft  = fetch
         lg  = log --max-count 15 --oneline --graph
         lgn = log --max-count 15 --oneline --graph --no-abbrev-commit
@@ -24,7 +22,6 @@
         pl  = pull
         rs  = reset
         rt  = remote
-        rtp = remote prune origin
         rv  = revert
         sm  = submodule
         ss  = stash
