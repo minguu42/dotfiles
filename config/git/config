@@ -14,12 +14,12 @@
         cm  = commit
         cme = commit -m '空コミット' --allow-empty
         df  = diff
-        ft  = fetch
+        ft  = fetch --prune
         lg  = log --max-count 15 --oneline --graph
         lgn = log --max-count 15 --oneline --graph --no-abbrev-commit
         mg  = merge
         ph  = push
-        pl  = pull
+        pl  = pull --prune
         rs  = reset
         rt  = remote
         rv  = revert
