@@ -39,14 +39,6 @@ cask "jetbrains-toolbox"
 cask "logi-options-plus"
 cask "notion"
 cask "raycast"
-cask "ticktick"
-cask "visual-studio-code"
 cask "zoom"
 
 mas "Trello", id: 1278508951
-
-vscode "davidanson.vscode-markdownlint"
-vscode "isudox.vscode-jetbrains-keybindings"
-vscode "ms-ceintl.vscode-language-pack-ja"
-vscode "negokaz.zenn-editor"
-vscode "yzhang.markdown-all-in-one"
