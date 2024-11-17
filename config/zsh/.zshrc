@@ -1,3 +1,6 @@
+### Homebrewで使用する環境変数を設定する
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 ### 環境変数
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -10,6 +13,7 @@ export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$XDG_DATA_HOME/npm/bin"
 
 ### エイリアス
 alias b="brew"
