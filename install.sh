@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if type xcode-select >/dev/null ; then
+if xcode-select -p >/dev/null 2>&1 ; then
   echo "Command Line Tools for Xcode is already installed."
 else
   echo "Installing Command Line Tools for Xcode..."
