@@ -1,7 +1,5 @@
 tap "hashicorp/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 
 brew "awscli"
 brew "direnv"
