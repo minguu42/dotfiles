@@ -14,6 +14,7 @@ export NVM_DIR="$XDG_DATA_HOME/nvm"
 
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$XDG_DATA_HOME/npm/bin"
+export PATH="$PATH:$HOME/Library/Application Support/JetBrains/Toolbox/scripts"
 
 ### エイリアス
 alias b="brew"
