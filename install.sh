@@ -7,6 +7,12 @@ if ! xcode-select -p >/dev/null 2>&1 ; then
   exit 1
 fi
 
+# ディレクトリがないとうまく動作しないソフトウェアがあるため、XDG Base Directoryのユーザディレクトリを先に作成しておく
+mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.cache"
+mkdir -p "$HOME/.local/share"
+mkdir -p "$HOME/.local/state"
+
 INSTALL_DIR="${INSTALL_DIR:-$HOME/ghq/github.com/minguu42/dotfiles}"
 
 if [[ -d "$INSTALL_DIR" ]] ; then
