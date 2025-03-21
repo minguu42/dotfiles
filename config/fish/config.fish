@@ -38,6 +38,10 @@ abbr -ac git sm submodule
 abbr -ac git ss stash
 abbr -ac git st status
 abbr -ac git sw switch
+abbr -ac gh prc pr create
+abbr -ac gh prm pr merge
+abbr -ac gh prw pr checks -i 5 --watch
+abbr -ac gh prv pr view
 abbr -a m make
 
 ### キーバインド
