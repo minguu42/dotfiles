@@ -38,12 +38,12 @@ brew update
 echo "Installing dependencies from Homebrew and Homebrew Cask..."
 brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile" --no-lock
 
-zsh_path="$(brew --prefix)/bin/zsh"
-if [[ -f "$zsh_path" && "$SHELL" != "$zsh_path" ]] ; then
-  if ! grep -q "$zsh_path" /etc/shells ; then
-    echo "Add $zsh_path to /etc/shells"
-    echo "$zsh_path" | sudo tee -a /etc/shells
+fish_path="$(brew --prefix)/bin/fish"
+if [[ -f "$fish_path" && "$SHELL" != "$fish_path" ]] ; then
+  if ! grep -q "$fish_path" /etc/shells ; then
+    echo "Add $fish_path to /etc/shells"
+    echo "$fish_path" | sudo tee -a /etc/shells
   fi
-  echo "Change login shell to $zsh_path"
-  chsh -s "$zsh_path"
+  echo "Change login shell to $fish_path"
+  chsh -s "$fish_path"
 fi
