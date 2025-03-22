@@ -1,5 +1,3 @@
-tap "homebrew/bundle"
-
 brew "aqua"
 brew "awscli"
 brew "direnv"
