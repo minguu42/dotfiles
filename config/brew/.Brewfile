@@ -1,8 +1,10 @@
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 
+brew "aqua"
 brew "awscli"
 brew "direnv"
+brew "fish"
 brew "gh"
 brew "ghq"
 brew "git"
@@ -23,7 +25,6 @@ brew "zsh-syntax-highlighting"
 brew "hashicorp/tap/terraform"
 
 cask "chatgpt"
-cask "deepl"
 cask "docker"
 cask "drawio"
 cask "figma"
@@ -35,3 +36,4 @@ cask "logi-options+"
 cask "notion"
 cask "raycast"
 cask "zoom"
+g ad
