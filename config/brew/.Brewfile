@@ -36,4 +36,3 @@ cask "logi-options+"
 cask "notion"
 cask "raycast"
 cask "zoom"
-g ad
