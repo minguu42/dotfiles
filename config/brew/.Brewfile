@@ -1,4 +1,3 @@
-tap "hashicorp/tap"
 tap "homebrew/bundle"
 
 brew "aqua"
@@ -17,7 +16,6 @@ brew "nano"
 brew "peco"
 brew "starship"
 brew "tree"
-brew "hashicorp/tap/terraform"
 
 cask "chatgpt"
 cask "docker"
