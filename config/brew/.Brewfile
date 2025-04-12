@@ -31,4 +31,3 @@ cask "visual-studio-code"
 cask "zoom"
 
 vscode "golang.go"
-vscode "rooveterinaryinc.roo-cline"
