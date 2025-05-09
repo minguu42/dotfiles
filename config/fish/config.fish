@@ -21,32 +21,31 @@ alias sed  gsed
 ### 略語
 abbr -a b brew
 abbr -a d docker
-abbr -ac docker c container
-abbr -ac docker i image
-abbr -ac docker p compose
-abbr -ac docker m compose
-abbr -ac docker n network
-abbr -ac docker v volume
+abbr -a d_c --regex c --command docker container
+abbr -a d_i --regex i --command docker image
+abbr -a d_m --regex m --command docker compose
+abbr -a d_n --regex n --command docker network
+abbr -a d_v --regex v --command docker volume
 abbr -a g git
-abbr -ac git ad add
-abbr -ac git br branch
-abbr -ac git cm commit
-abbr -ac git df diff
-abbr -ac git lg log -n 15
-abbr -ac git mg merge
-abbr -ac git ph push
-abbr -ac git pl pull --prune
-abbr -ac git rs reset
-abbr -ac git rt remote
-abbr -ac git rv revert
-abbr -ac git sm submodule
-abbr -ac git ss stash
-abbr -ac git st status
-abbr -ac git sw switch
-abbr -ac gh prc pr create
-abbr -ac gh prm pr merge
-abbr -ac gh prw pr checks -i 5 --watch
-abbr -ac gh prv pr view
+abbr -a g_ad --regex ad --command git add
+abbr -a g_br --regex br --command git branch
+abbr -a g_cm --regex cm --command git commit
+abbr -a g_df --regex df --command git diff
+abbr -a g_lg --regex lg --command git log -n 15
+abbr -a g_mg --regex mg --command git merge
+abbr -a g_ph --regex ph --command git push
+abbr -a g_pl --regex pl --command git pull --prune
+abbr -a g_rs --regex rs --command git reset
+abbr -a g_rt --regex rt --command git remote
+abbr -a g_rv --regex rv --command git revert
+abbr -a g_sm --regex sm --command git submodule
+abbr -a g_ss --regex ss --command git stash
+abbr -a g_st --regex st --command git status
+abbr -a g_sw --regex sw --command git switch
+abbr -a gh_c --regex c --command gh create
+abbr -a gh_m --regex m --command gh merge
+abbr -a gh_w --regex w --command gh checks -i 5 --watch
+abbr -a gh_v --regex v --command gh view
 abbr -a m make
 
 ### キーバインド
