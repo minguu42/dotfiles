@@ -29,7 +29,7 @@ abbr -a d_v --regex v --command docker volume
 abbr -a g git
 abbr -a g_a  --regex a  --command git add
 abbr -a g_b  --regex b  --command git branch
-abbr -a g_c  --regex c  --command git --set-cursor 'commit -m "%"'
+abbr -a g_c  --regex c  --command git commit
 abbr -a g_d  --regex d  --command git diff
 abbr -a g_l  --regex l  --command git log -n 15
 abbr -a g_m  --regex m  --command git merge
