@@ -60,3 +60,6 @@ Temporary Items
 ### direnv ###
 .direnv
 .envrc
+
+### Claude Code ###
+**/.claude/settings.local.json
