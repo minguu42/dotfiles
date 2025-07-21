@@ -14,9 +14,12 @@ function check_ci_status
       sleep 5
       continue
     end
-
-    gh pr checks
-    terminal-notifier -title "GitHub CLI" -message "All checks are complete for pull request $pr_owner/$pr_repository#$pr_number" -sound "Boop"
     break
+  end
+
+  if gh pr checks
+    terminal-notifier -title "GitHub CLI" -message "All checks were successful for pull request $pr_owner/$pr_repository#$pr_number" -sound "Boop"
+  else
+    terminal-notifier -title "GitHub CLI" -message "Some checks were not successful for pull request $pr_owner/$pr_repository#$pr_number" -sound "Boop"
   end
 end
