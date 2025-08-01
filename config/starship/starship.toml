@@ -17,6 +17,7 @@ truncation_symbol = ".../"
 [git_status]
 conflicted = "~"
 up_to_date = "="
+use_git_executable = true # https://github.com/starship/starship/pull/6755 のバグが解消されたら削除する
 
 [time]
 disabled = false
