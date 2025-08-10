@@ -20,6 +20,7 @@ alias sed  gsed
 
 ### 略語
 abbr -a b brew
+abbr -a c claude
 abbr -a d docker
 abbr -a d_c --regex c --command docker container
 abbr -a d_i --regex i --command docker image
