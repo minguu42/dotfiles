@@ -9,21 +9,11 @@
           }
         ]
       }
-    ],
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "terminal-notifier -title 'Claude Code' -message 'Claude has finished responding' -sound 'Boop'"
-          }
-        ]
-      }
     ]
   },
   "statusLine": {
     "type": "command",
-    "command": "ccusage statusline",
+    "command": "node ~/.claude/statusline.js",
     "padding": 0
   }
 }
