@@ -1,4 +1,12 @@
 {
+  "env": {
+    "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": true,
+    "DISABLE_BUG_COMMAND": true,
+    "DISABLE_ERROR_REPORTING": true,
+    "DISABLE_MICROCOMPACT": true,
+    "DISABLE_TELEMETRY": true,
+    "MAX_THINKING_TOKENS": 31999
+  },
   "hooks": {
     "Notification": [
       {
