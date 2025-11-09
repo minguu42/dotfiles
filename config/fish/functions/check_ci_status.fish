@@ -8,10 +8,15 @@ function check_ci_status
     return 1
   end
 
+  set -l interval 10
+  set -l count 0
   while true
     gh pr checks >/dev/null 2>&1
     if test $status -eq 8
-      sleep 5
+      set elapsed (math "$count * $interval")
+      echo "Waiting... $elapsed seconds elapsed"
+      sleep $interval
+      set count (math "$count + 1")
       continue
     end
     break
