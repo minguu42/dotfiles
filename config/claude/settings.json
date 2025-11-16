@@ -10,10 +10,21 @@
   "hooks": {
     "Notification": [
       {
+        "matcher": "permission_prompt|elicitation_dialog",
         "hooks": [
           {
             "type": "command",
             "command": "jq -r '.message' | terminal-notifier -title 'Claude Code' -sound 'Boop'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "terminal-notifier -title 'Claude Code' -message 'Claude has completed the task.' -sound 'Boop'"
           }
         ]
       }
