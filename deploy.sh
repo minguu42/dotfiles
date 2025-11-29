@@ -2,7 +2,6 @@
 set -euo pipefail
 
 XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
-mkdir -p "$XDG_CONFIG_HOME/aquaproj-aqua"
 mkdir -p "$XDG_CONFIG_HOME/brew"
 mkdir -p "$HOME/.claude"
 mkdir -p "$HOME/.claude/commands"
@@ -17,7 +16,6 @@ mkdir -p "$XDG_CONFIG_HOME/zsh"
 
 echo "Deploying configuration files..."
 config_dir="$(cd "$(dirname "$0")/config" || exit 1 ; pwd)"
-ln -fns "$config_dir/aqua/aqua.yaml"                        "$XDG_CONFIG_HOME/aquaproj-aqua"
 ln -fns "$config_dir/brew/.Brewfile"                        "$XDG_CONFIG_HOME/brew"
 ln -fns "$config_dir/claude/CLAUDE.md"                      "$HOME/.claude"
 ln -fns "$config_dir/claude/settings.json"                  "$HOME/.claude"
