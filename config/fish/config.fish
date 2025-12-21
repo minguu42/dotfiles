@@ -12,6 +12,7 @@ set -gx HOMEBREW_BUNDLE_DUMP_NO_VSCODE "true"
 set -gx HOMEBREW_BUNDLE_FILE           "$XDG_CONFIG_HOME/brew/.Brewfile"
 set -gx NPM_CONFIG_USERCONFIG          "$XDG_CONFIG_HOME/npm/npmrc"
 
+if test -d "$HOME/.local/bin"; fish_add_path -Pm "$HOME/.local/bin"; end
 if test -d "$HOMEBREW_PREFIX/opt/node@24/bin"; fish_add_path -Pm "$HOMEBREW_PREFIX/opt/node@24/bin"; end
 if test -d "$XDG_DATA_HOME/go/bin"; fish_add_path -Pm "$XDG_DATA_HOME/go/bin"; end
 if test -d "$XDG_DATA_HOME/npm/bin"; fish_add_path -Pm "$XDG_DATA_HOME/npm/bin"; end
