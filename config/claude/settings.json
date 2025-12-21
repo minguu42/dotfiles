@@ -32,7 +32,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "node ~/.claude/statusline.js",
+    "command": "claude-code-statusline",
     "padding": 0
   }
 }
