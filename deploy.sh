@@ -19,7 +19,6 @@ config_dir="$(cd "$(dirname "$0")/config" || exit 1 ; pwd)"
 ln -fns "$config_dir/brew/.Brewfile"                        "$XDG_CONFIG_HOME/brew"
 ln -fns "$config_dir/claude/CLAUDE.md"                      "$HOME/.claude"
 ln -fns "$config_dir/claude/settings.json"                  "$HOME/.claude"
-ln -fns "$config_dir/claude/statusline.js"                  "$HOME/.claude"
 ln -fns "$config_dir/claude/commands/kiro.md"               "$HOME/.claude/commands"
 ln -fns "$config_dir/codex/AGENTS.md"                       "$HOME/.codex/AGENTS.md"
 ln -fns "$config_dir/fish/config.fish"                      "$XDG_CONFIG_HOME/fish"
@@ -34,3 +33,6 @@ ln -fns "$config_dir/npm/npmrc"                             "$XDG_CONFIG_HOME/np
 ln -fns "$config_dir/starship/starship.toml"                "$XDG_CONFIG_HOME"
 ln -fns "$config_dir/zsh/.zshenv"                           "$HOME"
 ln -fns "$config_dir/zsh/.zshrc"                            "$XDG_CONFIG_HOME/zsh"
+
+echo "Building..."
+go install ./claude-code-statusline/
