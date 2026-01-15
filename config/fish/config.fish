@@ -54,6 +54,7 @@ abbr -a gh_m  --regex m  --command gh merge
 abbr -a gh_w  --regex w  --command gh checks -i 5 --watch
 abbr -a gh_v  --regex v  --command gh view
 abbr -a m make
+abbr -a pn pnpm
 
 ### キーバインド
 bind ctrl-g select_repository
