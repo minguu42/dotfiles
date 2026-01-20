@@ -7,7 +7,53 @@
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "true",
     "DISABLE_TELEMETRY": "true"
   },
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(go build:*)",
+      "Bash(go clean:*)",
+      "Bash(go fmt:*)",
+      "Bash(go generate:*)",
+      "Bash(go test:*)",
+      "Bash(go tool:*)",
+      "Bash(go list:*)",
+      "Bash(go vet:*)",
+      "Bash(go run:*)",
+      "Bash(grep:*)",
+      "Bash(gh pr:*)",
+      "Bash(rm:*)",
+      "Bash(docker container:*)",
+      "Bash(tee:*)",
+      "WebSearch",
+      "Bash(gh run view:*)",
+      "Bash(go mod tidy:*)",
+      "Bash(mkdir:*)"
+    ],
+    "deny": [
+      "Bash(sudo:*)",
+      "Bash(rm -rf:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git commit:*)",
+      "Read(.env)",
+      "Write(.env)"
+    ],
+    "defaultMode": "acceptEdits",
+    "disableBypassPermissionsMode": "disable"
+  },
   "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.file_path | select(endswith(\".go\"))' | xargs -r go tool goimports -w"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "matcher": "permission_prompt|elicitation_dialog",
