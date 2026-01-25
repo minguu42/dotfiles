@@ -61,8 +61,10 @@ func mainRun() error {
 		fmt.Fprintf(&b, " on %s\uE0A0 %s%s", magenta, branch, reset)
 	}
 
-	// auto-compactが有効な場合はコンテキストウィンドウの22.5%がバッファとして確保される
-	tokens := int(float64(in.ContextWindow.ContextWindowSize) * 0.225)
+	var tokens int
+	// auto-compactが有効な場合はコンテキストウィンドウの一部がバッファとして確保されるため、その分を事前に足す必要がある。
+	// バッファサイズは13000+CLAUDE_CODE_MAX_OUTPUT_TOKENSとなる。
+	// tokens += 13000 + maxOutputTokens
 	if in.ContextWindow.CurrentUsage != nil {
 		u := in.ContextWindow.CurrentUsage
 		tokens += u.InputTokens + u.CacheCreationInputTokens + u.CacheReadInputTokens
@@ -71,9 +73,9 @@ func mainRun() error {
 	used := float64(tokens) * 100 / float64(in.ContextWindow.ContextWindowSize)
 	usedColor := green
 	switch {
-	case used >= 80:
+	case used >= 85:
 		usedColor = red
-	case used >= 60:
+	case used >= 65:
 		usedColor = yellow
 	}
 

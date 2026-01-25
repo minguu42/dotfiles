@@ -63,3 +63,5 @@ Temporary Items
 
 ### Claude Code ###
 **/.claude/*.local.*
+.plans/
+.wt/

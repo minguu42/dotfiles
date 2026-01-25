@@ -39,7 +39,7 @@
       "Read(.env)",
       "Write(.env)"
     ],
-    "defaultMode": "acceptEdits",
+    "defaultMode": "plan",
     "disableBypassPermissionsMode": "disable"
   },
   "hooks": {
@@ -81,7 +81,9 @@
     "command": "claude-code-statusline",
     "padding": 0
   },
+  "respectGitignore": false,
   "forceLoginMethod": "claudeai",
+  "plansDirectory": "./.plans",
   "showTurnDuration": true,
   "language": "japanese",
   "spinnerTipsEnabled": false
