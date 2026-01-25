@@ -48,6 +48,7 @@ abbr -a g_sm  --regex sm --command git submodule
 abbr -a g_ss  --regex ss --command git stash
 abbr -a g_st  --regex st --command git status
 abbr -a g_sw  --regex sw --command git switch
+abbr -a g_wt  --regex wt --command git worktree
 abbr -a gh_c  --regex c  --command gh create
 abbr -a gh_co --regex co --command gh checkout
 abbr -a gh_m  --regex m  --command gh merge
@@ -55,6 +56,7 @@ abbr -a gh_w  --regex w  --command gh checks -i 5 --watch
 abbr -a gh_v  --regex v  --command gh view
 abbr -a m make
 abbr -a pn pnpm
+abbr -a tf terraform
 
 ### キーバインド
 bind ctrl-g select_repository
