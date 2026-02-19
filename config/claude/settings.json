@@ -1,5 +1,6 @@
 {
   "env": {
+    "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "true",
     "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "true",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "true",
     "DISABLE_BUG_COMMAND": "true",
@@ -27,6 +28,8 @@
       "WebSearch",
       "Bash(gh run view:*)",
       "Bash(go mod tidy:*)",
+      "Bash(terraform fmt:*)",
+      "Bash(terraform validate:*)",
       "Bash(mkdir:*)"
     ],
     "deny": [
@@ -39,9 +42,9 @@
       "Read(.env)",
       "Write(.env)"
     ],
-    "defaultMode": "plan",
     "disableBypassPermissionsMode": "disable"
   },
+  "model": "opus",
   "hooks": {
     "PostToolUse": [
       {
@@ -83,8 +86,9 @@
   },
   "respectGitignore": false,
   "forceLoginMethod": "claudeai",
-  "plansDirectory": "./.plans",
-  "showTurnDuration": true,
   "language": "japanese",
-  "spinnerTipsEnabled": false
+  "spinnerTipsEnabled": false,
+  "plansDirectory": "./.plans",
+  "skipDangerousModePermissionPrompt": true,
+  "showTurnDuration": true
 }
