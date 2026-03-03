@@ -11,6 +11,7 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
+      "Bash(gofmt:*)",
       "Bash(go build:*)",
       "Bash(go clean:*)",
       "Bash(go fmt:*)",
@@ -22,15 +23,19 @@
       "Bash(go run:*)",
       "Bash(grep:*)",
       "Bash(gh pr:*)",
+      "Bash(gh search:*)",
       "Bash(rm:*)",
       "Bash(docker container:*)",
+      "Bash(docker image:*)",
       "Bash(tee:*)",
-      "WebSearch",
       "Bash(gh run view:*)",
       "Bash(go mod tidy:*)",
       "Bash(terraform fmt:*)",
       "Bash(terraform validate:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(wc:*)",
+      "WebFetch(domain:github.com)",
+      "WebSearch"
     ],
     "deny": [
       "Bash(sudo:*)",
