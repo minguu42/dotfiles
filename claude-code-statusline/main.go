@@ -40,6 +40,14 @@ type Input struct {
 			CacheReadInputTokens     int `json:"cache_read_input_tokens"`
 		} `json:"current_usage"`
 	} `json:"context_window"`
+	RateLimits struct {
+		FiveHour struct {
+			UsedPercentage int `json:"used_percentage"`
+		} `json:"five_hour"`
+		SevenDay struct {
+			UsedPercentage int `json:"used_percentage"`
+		} `json:"seven_day"`
+	} `json:"rate_limits"`
 }
 
 func mainRun() error {
@@ -79,8 +87,25 @@ func mainRun() error {
 		usedColor = yellow
 	}
 
-	fmt.Fprintf(&b, " used %s%.0f%%%s at %s%s%s",
+	fiveHourColor := green
+	switch {
+	case in.RateLimits.FiveHour.UsedPercentage >= 85:
+		fiveHourColor = red
+	case in.RateLimits.FiveHour.UsedPercentage >= 65:
+		fiveHourColor = yellow
+	}
+	sevenDayColor := green
+	switch {
+	case in.RateLimits.SevenDay.UsedPercentage >= 85:
+		sevenDayColor = red
+	case in.RateLimits.SevenDay.UsedPercentage >= 65:
+		sevenDayColor = yellow
+	}
+
+	fmt.Fprintf(&b, " used %s%.0f%%%s (5h: %s%d%%%s, 7d: %s%d%%%s) at %s%s%s",
 		usedColor, used, reset,
+		fiveHourColor, in.RateLimits.FiveHour.UsedPercentage, reset,
+		sevenDayColor, in.RateLimits.SevenDay.UsedPercentage, reset,
 		yellow, time.Now().Format(time.TimeOnly), reset,
 	)
 	fmt.Print(b.String())
