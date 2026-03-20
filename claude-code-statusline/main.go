@@ -42,10 +42,10 @@ type Input struct {
 	} `json:"context_window"`
 	RateLimits struct {
 		FiveHour struct {
-			UsedPercentage int `json:"used_percentage"`
+			UsedPercentage float64 `json:"used_percentage"`
 		} `json:"five_hour"`
 		SevenDay struct {
-			UsedPercentage int `json:"used_percentage"`
+			UsedPercentage float64 `json:"used_percentage"`
 		} `json:"seven_day"`
 	} `json:"rate_limits"`
 }
@@ -102,7 +102,7 @@ func mainRun() error {
 		sevenDayColor = yellow
 	}
 
-	fmt.Fprintf(&b, " used %s%.0f%%%s (5h: %s%d%%%s, 7d: %s%d%%%s) at %s%s%s",
+	fmt.Fprintf(&b, " used %s%.0f%%%s (5h: %s%.0f%%%s, 7d: %s%.0f%%%s) at %s%s%s",
 		usedColor, used, reset,
 		fiveHourColor, in.RateLimits.FiveHour.UsedPercentage, reset,
 		sevenDayColor, in.RateLimits.SevenDay.UsedPercentage, reset,
