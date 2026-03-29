@@ -31,6 +31,7 @@
       "Bash(git status:*)",
       "Bash(go build:*)",
       "Bash(go clean:*)",
+      "Bash(go doc:*)",
       "Bash(go fmt:*)",
       "Bash(go generate:*)",
       "Bash(go get:*)",
