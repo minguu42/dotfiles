@@ -12,7 +12,6 @@
   "permissions": {
     "allow": [
       "Bash(benchstat:*)",
-      "Bash(curl:*)",
       "Bash(do:*)",
       "Bash(docker container:*)",
       "Bash(docker image:*)",
@@ -20,6 +19,7 @@
       "Bash(echo:*)",
       "Bash(env:*)",
       "Bash(find:*)",
+      "Bash(for:*)",
       "Bash(gh pr:*)",
       "Bash(gh run view:*)",
       "Bash(gh search:*)",
@@ -54,9 +54,14 @@
       "Bash(which:*)",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:tip.golang.org)",
+      "WebFetch(domain:qiita.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
       "WebSearch"
     ],
     "deny": [
+      "Bash(curl:*)",
+      "Bash(ssh:*)",
+      "Bash(scp:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rebase:*)",
