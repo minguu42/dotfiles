@@ -25,35 +25,35 @@ alias sed  gsed
 abbr -a b brew
 abbr -a c claude
 abbr -a d docker
-abbr -a d_c --regex c --command docker container
-abbr -a d_i --regex i --command docker image
-abbr -a d_m --regex m --command docker compose
-abbr -a d_n --regex n --command docker network
-abbr -a d_v --regex v --command docker volume
+abbr_subcommand docker c container
+abbr_subcommand docker i image
+abbr_subcommand docker m compose
+abbr_subcommand docker n network
+abbr_subcommand docker v volume
 abbr -a g git
-abbr -a g_ad  --regex ad --command git add
-abbr -a g_br  --regex br --command git branch
-abbr -a g_cm  --regex cm --command git commit
-abbr -a g_co  --regex co --command git checkout
-abbr -a g_df  --regex df --command git diff
-abbr -a g_lg  --regex lg --command git log -n 15
-abbr -a g_mg  --regex mg --command git merge
-abbr -a g_ph  --regex ph --command git push
-abbr -a g_pl  --regex pl --command git pull --prune
-abbr -a g_rb  --regex rb --command git rebase
-abbr -a g_rs  --regex rs --command git reset
-abbr -a g_rr  --regex rt --command git restore
-abbr -a g_rv  --regex rv --command git revert
-abbr -a g_sm  --regex sm --command git submodule
-abbr -a g_ss  --regex ss --command git stash
-abbr -a g_st  --regex st --command git status
-abbr -a g_sw  --regex sw --command git switch
-abbr -a g_wt  --regex wt --command git worktree
-abbr -a gh_c  --regex c  --command gh create
-abbr -a gh_co --regex co --command gh checkout
-abbr -a gh_m  --regex m  --command gh merge
-abbr -a gh_w  --regex w  --command gh checks -i 5 --watch
-abbr -a gh_v  --regex v  --command gh view
+abbr_subcommand git ad add
+abbr_subcommand git br branch
+abbr_subcommand git cm commit
+abbr_subcommand git co checkout
+abbr_subcommand git df diff
+abbr_subcommand git lg log -n 15
+abbr_subcommand git mg merge
+abbr_subcommand git ph push
+abbr_subcommand git pl pull --prune
+abbr_subcommand git rb rebase
+abbr_subcommand git rs reset
+abbr_subcommand git rt restore
+abbr_subcommand git rv revert
+abbr_subcommand git sm submodule
+abbr_subcommand git ss stash
+abbr_subcommand git st status
+abbr_subcommand git sw switch
+abbr_subcommand git wt worktree
+abbr_subsubcommand gh pr c create
+abbr_subsubcommand gh pr co checkout
+abbr_subsubcommand gh pr m merge
+abbr_subsubcommand gh pr w checks -i 5 --watch
+abbr_subsubcommand gh pr v view
 abbr -a m make
 abbr -a pn pnpm
 abbr -a tf terraform
