@@ -12,6 +12,7 @@
   "permissions": {
     "allow": [
       "Bash(benchstat:*)",
+      "Bash(cat:*)",
       "Bash(do:*)",
       "Bash(docker container:*)",
       "Bash(docker image:*)",
@@ -53,6 +54,8 @@
       "Bash(wc:*)",
       "Bash(which:*)",
       "WebFetch(domain:github.com)",
+      "WebFetch(domain:google.github.io)",
+      "WebFetch(domain:pkg.go.dev)",
       "WebFetch(domain:tip.golang.org)",
       "WebFetch(domain:qiita.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
@@ -62,6 +65,7 @@
       "Bash(curl:*)",
       "Bash(ssh:*)",
       "Bash(scp:*)",
+      "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rebase:*)",
@@ -69,7 +73,9 @@
       "Bash(rm -rf:*)",
       "Bash(sudo:*)",
       "Read(.env)",
-      "Write(.env)"
+      "Read(.envrc)",
+      "Write(.env)",
+      "Write(.envrc)"
     ],
     "disableBypassPermissionsMode": "disable"
   },
