@@ -119,7 +119,7 @@
   "forceLoginMethod": "claudeai",
   "language": "japanese",
   "spinnerTipsEnabled": false,
-  "plansDirectory": "./.plans",
+  "plansDirectory": "./.claude/plans",
   "voiceEnabled": true,
   "skipDangerousModePermissionPrompt": true,
   "showTurnDuration": true
