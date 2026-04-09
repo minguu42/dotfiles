@@ -2,6 +2,7 @@
   "respectGitignore": false,
   "env": {
     "CLAUDE_BASH_MAINTAIN_PROJECT_WORKING_DIR": "true",
+    "CLAUDE_CODE_EFFORT_LEVEL": "max",
     "CLAUDE_CODE_HIDE_ACCOUNT_INFO": "true",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "true",
     "DISABLE_BUG_COMMAND": "true",
