@@ -13,3 +13,7 @@ xcode-select --install
 ```bash
 curl -fsSL https://claude.ai/install.sh | bash
 ```
+
+```bash
+curl -fsSL https://vite.plus | bash
+```

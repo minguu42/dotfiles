@@ -11,6 +11,7 @@ set -gx HOMEBREW_BUNDLE_DUMP_NO_GO     "true"
 set -gx HOMEBREW_BUNDLE_DUMP_NO_VSCODE "true"
 set -gx HOMEBREW_BUNDLE_FILE           "$XDG_CONFIG_HOME/brew/.Brewfile"
 set -gx NPM_CONFIG_USERCONFIG          "$XDG_CONFIG_HOME/npm/npmrc"
+set -gx VP_HOME                        "$XDG_DATA_HOME/vite-plus"
 
 if test -d "$HOME/.local/bin"; fish_add_path -Pm "$HOME/.local/bin"; end
 if test -d "$XDG_DATA_HOME/go/bin"; fish_add_path -Pm "$XDG_DATA_HOME/go/bin"; end
