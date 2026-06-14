@@ -22,7 +22,6 @@ brew "tree"
 brew "hashicorp/tap/terraform"
 
 cask "bruno"
-cask "chatgpt"
 cask "claude"
 cask "docker-desktop"
 cask "drawio"
