@@ -118,6 +118,14 @@
   "effortLevel": "xhigh",
   "plansDirectory": "./.claude/plans",
   "skipDangerousModePermissionPrompt": true,
+  "showTurnDuration": true,
   "voiceEnabled": true,
-  "showTurnDuration": true
+  "extraKnownMarketplaces": {
+    "chrome-devtools-plugins": {
+      "source": {
+        "source": "github",
+        "repo": "ChromeDevTools/chrome-devtools-mcp"
+      }
+    }
+  }
 }
