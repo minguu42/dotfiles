@@ -15,10 +15,7 @@ mkdir -p "$HOME/.local/state"
 
 INSTALL_DIR="${INSTALL_DIR:-$HOME/ghq/github.com/minguu42/dotfiles}"
 
-if [[ -d "$INSTALL_DIR" ]] ; then
-  echo "Updating dotfiles..."
-  git -C "$INSTALL_DIR" pull
-else
+if [[ ! -d "$INSTALL_DIR" ]] ; then
   echo "Installing dotfiles..."
   git clone https://github.com/minguu42/dotfiles "$INSTALL_DIR"
 fi
@@ -32,11 +29,14 @@ else
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 echo "Updating Homebrew..."
 brew update
 
 echo "Installing dependencies from Homebrew and Homebrew Cask..."
-brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile" --no-lock
+brew trust hashicorp/tap
+brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile"
 
 fish_path="$(brew --prefix)/bin/fish"
 if [[ -f "$fish_path" && "$SHELL" != "$fish_path" ]] ; then
