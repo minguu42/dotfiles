@@ -33,5 +33,7 @@ ln -fns "$config_dir/starship/starship.toml"                "$XDG_CONFIG_HOME"
 ln -fns "$config_dir/zsh/.zshenv"                           "$HOME"
 ln -fns "$config_dir/zsh/.zshrc"                            "$XDG_CONFIG_HOME/zsh"
 
-echo "Building..."
-go install ./claude-code-statusline/
+if command -v go >/dev/null 2>&1; then
+  echo "Building claude-code-statusline command..."
+  go install "$(dirname "$0")/claude-code-statusline/"
+fi
