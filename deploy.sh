@@ -30,8 +30,6 @@ ln -fns "$config_dir/git/ignore"                            "$XDG_CONFIG_HOME/gi
 ln -fns "$config_dir/nano/nanorc"                           "$XDG_CONFIG_HOME/nano"
 ln -fns "$config_dir/npm/npmrc"                             "$XDG_CONFIG_HOME/npm"
 ln -fns "$config_dir/starship/starship.toml"                "$XDG_CONFIG_HOME"
-ln -fns "$config_dir/zsh/.zshenv"                           "$HOME"
-ln -fns "$config_dir/zsh/.zshrc"                            "$XDG_CONFIG_HOME/zsh"
 
 if command -v go >/dev/null 2>&1; then
   echo "Building claude-code-statusline command..."
