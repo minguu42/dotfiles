@@ -112,6 +112,29 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
   },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "permission_prompt|elicitation_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.message' | terminal-notifier -title 'Claude Code' -sound 'Boop'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HOME/.claude/hooks/stop.sh"
+          }
+        ]
+      }
+    ]
+  },
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
       "source": {
