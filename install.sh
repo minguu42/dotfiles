@@ -38,6 +38,9 @@ echo "Installing dependencies from Homebrew and Homebrew Cask..."
 brew trust hashicorp/tap
 brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile"
 
+# 1回目の実行ではgoコマンドがなく、Go製プログラムのビルドが行われていないので、再度実行する
+/bin/bash "$INSTALL_DIR/deploy.sh"
+
 fish_path="$(brew --prefix)/bin/fish"
 if [[ -f "$fish_path" && "$SHELL" != "$fish_path" ]] ; then
   if ! grep -q "$fish_path" /etc/shells ; then
