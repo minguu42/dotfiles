@@ -103,7 +103,7 @@
     "defaultMode": "auto",
     "disableBypassPermissionsMode": "disable"
   },
-  "model": "opus",
+  "model": "opus[1m]",
   "statusLine": {
     "type": "command",
     "command": "claude-code-statusline",
@@ -112,14 +112,6 @@
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
   },
-  "forceLoginMethod": "claudeai",
-  "language": "japanese",
-  "spinnerTipsEnabled": false,
-  "effortLevel": "xhigh",
-  "plansDirectory": "./.claude/plans",
-  "skipDangerousModePermissionPrompt": true,
-  "showTurnDuration": true,
-  "voiceEnabled": true,
   "extraKnownMarketplaces": {
     "chrome-devtools-plugins": {
       "source": {
@@ -127,5 +119,14 @@
         "repo": "ChromeDevTools/chrome-devtools-mcp"
       }
     }
-  }
+  },
+  "forceLoginMethod": "claudeai",
+  "language": "japanese",
+  "spinnerTipsEnabled": false,
+  "effortLevel": "xhigh",
+  "plansDirectory": "./.claude/plans",
+  "skipDangerousModePermissionPrompt": true,
+  "theme": "dark",
+  "showTurnDuration": true,
+  "voiceEnabled": true
 }
