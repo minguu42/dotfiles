@@ -97,8 +97,8 @@
       "Bash(sudo:*)",
       "Read(.env)",
       "Read(.envrc)",
-      "Write(.env)",
-      "Write(.envrc)"
+      "Edit(.env)",
+      "Edit(.envrc)"
     ],
     "defaultMode": "auto",
     "disableBypassPermissionsMode": "disable"
