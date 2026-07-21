@@ -36,7 +36,7 @@ abbr_subcommand git br branch
 abbr_subcommand git cm commit
 abbr_subcommand git co checkout
 abbr_subcommand git df diff
-abbr_subcommand git lg log -n 15
+abbr_subcommand git lg log --graph --all -n 15
 abbr_subcommand git mg merge
 abbr_subcommand git ph push
 abbr_subcommand git pl pull --prune
