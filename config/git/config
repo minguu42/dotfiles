@@ -20,7 +20,6 @@
 	defaultBranch = main
 [log]
 	abbrevCommit = true
-	graphColors = true
 [merge]
 	conflictStyle = zdiff3
 [pull]
