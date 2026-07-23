@@ -8,6 +8,7 @@ set -gx XDG_STATE_HOME  "$HOME/.local/state"
 
 set -gx GOPATH                                 "$XDG_DATA_HOME/go"
 set -gx HOMEBREW_BUNDLE_DUMP_NO_GO             "true"
+set -gx HOMEBREW_BUNDLE_DUMP_NO_NPM            "true"
 set -gx HOMEBREW_BUNDLE_DUMP_NO_VSCODE         "true"
 set -gx HOMEBREW_BUNDLE_FILE                   "$XDG_CONFIG_HOME/brew/.Brewfile"
 set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS "true"

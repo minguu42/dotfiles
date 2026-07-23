@@ -35,7 +35,6 @@ echo "Updating Homebrew..."
 brew update
 
 echo "Installing dependencies from Homebrew and Homebrew Cask..."
-brew trust hashicorp/tap
 brew bundle install --file "$INSTALL_DIR/config/brew/.Brewfile"
 
 # 1回目の実行ではgoコマンドがなく、Go製プログラムのビルドが行われていないので、再度実行する

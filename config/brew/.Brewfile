@@ -1,4 +1,4 @@
-tap "hashicorp/tap"
+tap "hashicorp/tap", trusted: true
 
 brew "awscli"
 brew "direnv"
@@ -18,6 +18,7 @@ brew "starship"
 brew "terminal-notifier"
 brew "tokei"
 brew "tree"
+brew "uv"
 brew "hashicorp/tap/terraform"
 
 cask "bruno"
