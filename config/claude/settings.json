@@ -10,6 +10,12 @@
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "true",
     "DISABLE_TELEMETRY": "true"
   },
+  "deniedMcpServers": [
+    { "serverUrl": "https://gmailmcp.googleapis.com/*" },
+    { "serverUrl": "https://calendarmcp.googleapis.com/*" },
+    { "serverUrl": "https://drivemcp.googleapis.com/*" },
+    { "serverUrl": "https://mcp.canva.com/*" }
+  ],
   "permissions": {
     "allow": [],
     "deny": [
