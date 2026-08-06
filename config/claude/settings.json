@@ -10,24 +10,16 @@
     "DISABLE_NON_ESSENTIAL_MODEL_CALLS": "true",
     "DISABLE_TELEMETRY": "true"
   },
-  "deniedMcpServers": [
-    { "serverUrl": "https://gmailmcp.googleapis.com/*" },
-    { "serverUrl": "https://calendarmcp.googleapis.com/*" },
-    { "serverUrl": "https://drivemcp.googleapis.com/*" },
-    { "serverUrl": "https://mcp.canva.com/*" }
-  ],
   "permissions": {
     "allow": [],
     "deny": [
       "Bash(aws:*)",
       "Bash(curl:*)",
-      "Bash(git -C:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git rebase:*)",
       "Bash(git reset:*)",
-      "Bash(git rm:*)",
       "Bash(rm -rf:*)",
       "Bash(scp:*)",
       "Bash(ssh:*)",
@@ -41,6 +33,20 @@
     "disableBypassPermissionsMode": "disable"
   },
   "model": "claude-fable-5[1m]",
+  "deniedMcpServers": [
+    {
+      "serverUrl": "https://gmailmcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://calendarmcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://drivemcp.googleapis.com/*"
+    },
+    {
+      "serverUrl": "https://mcp.canva.com/*"
+    }
+  ],
   "hooks": {
     "Notification": [
       {
@@ -89,5 +95,6 @@
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
   "showTurnDuration": true,
-  "voiceEnabled": true
+  "voiceEnabled": true,
+  "tui": "fullscreen"
 }
