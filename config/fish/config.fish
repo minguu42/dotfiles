@@ -68,4 +68,3 @@ set -g fish_greeting # welcomeメッセージを表示しない
 
 ### プラグイン
 direnv hook fish | source
-starship init fish | source
