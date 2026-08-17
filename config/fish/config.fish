@@ -30,6 +30,7 @@ abbr_subcommand docker c container
 abbr_subcommand docker i image
 abbr_subcommand docker m compose
 abbr_subcommand docker n network
+abbr_subcommand docker p pass
 abbr_subcommand docker v volume
 abbr -a g git
 abbr_subcommand git ad add
