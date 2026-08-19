@@ -18,7 +18,7 @@ config_dir="$(cd "$(dirname "$0")/config" || exit 1 ; pwd)"
 ln -fns "$config_dir/brew/.Brewfile"                        "$XDG_CONFIG_HOME/brew"
 ln -fns "$config_dir/claude/CLAUDE.md"                      "$HOME/.claude"
 ln -fns "$config_dir/claude/settings.json"                  "$HOME/.claude"
-ln -fns "$config_dir/fish/conf.d/git_prompt.fish"           "$XDG_CONFIG_HOME/fish/conf.d"
+ln -fns "$config_dir/fish/conf.d/async_git_status.fish"     "$XDG_CONFIG_HOME/fish/conf.d"
 ln -fns "$config_dir/fish/config.fish"                      "$XDG_CONFIG_HOME/fish"
 ln -fns "$config_dir/fish/functions/abbr.fish"              "$XDG_CONFIG_HOME/fish/functions"
 ln -fns "$config_dir/fish/functions/check_ci_status.fish"   "$XDG_CONFIG_HOME/fish/functions"
@@ -32,6 +32,6 @@ ln -fns "$config_dir/nano/nanorc"                           "$XDG_CONFIG_HOME/na
 ln -fns "$config_dir/npm/npmrc"                             "$XDG_CONFIG_HOME/npm"
 
 if command -v go >/dev/null 2>&1; then
-  echo "Building claude-code-statusline command..."
-  go install "$(dirname "$0")/claude-code-statusline/"
+  echo "Building Go commands..."
+  go install "$(dirname "$0")/claude-code-statusline/" "$(dirname "$0")/fish-prompt/" "$(dirname "$0")/fish-prompt-git-status/"
 fi
