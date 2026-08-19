@@ -23,6 +23,9 @@ function _git_prompt_focus --on-event fish_focus_in
     _git_prompt_update
 end
 
+# Ctrl+Lでの画面クリア時にGit情報を更新する
+bind ctrl-l '_git_prompt_update; commandline --function clear-screen'
+
 function _git_prompt_postexec --on-event fish_postexec
     _git_prompt_update
 end
