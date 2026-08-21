@@ -41,10 +41,10 @@ type Input struct {
 		} `json:"current_usage"`
 	} `json:"context_window"`
 	RateLimits struct {
-		FiveHour struct {
+		FiveHour *struct {
 			UsedPercentage float64 `json:"used_percentage"`
 		} `json:"five_hour"`
-		SevenDay struct {
+		SevenDay *struct {
 			UsedPercentage float64 `json:"used_percentage"`
 		} `json:"seven_day"`
 	} `json:"rate_limits"`
@@ -69,45 +69,32 @@ func mainRun() error {
 		fmt.Fprintf(&b, " on %s\uE0A0 %s%s", magenta, branch, reset)
 	}
 
-	var tokens int
 	// auto-compactが有効な場合はコンテキストウィンドウの一部がバッファとして確保されるため、その分を事前に足す必要がある。
 	// バッファサイズは13000+CLAUDE_CODE_MAX_OUTPUT_TOKENSとなる。
 	// tokens += 13000 + maxOutputTokens
-	if in.ContextWindow.CurrentUsage != nil {
+	if in.ContextWindow.CurrentUsage != nil && in.RateLimits.FiveHour != nil && in.RateLimits.SevenDay != nil {
 		u := in.ContextWindow.CurrentUsage
-		tokens += u.InputTokens + u.CacheCreationInputTokens + u.CacheReadInputTokens
+		tokens := u.InputTokens + u.CacheCreationInputTokens + u.CacheReadInputTokens
+		used := float64(tokens) * 100 / float64(in.ContextWindow.ContextWindowSize)
+		fmt.Fprintf(&b, " used %s (5h: %s, 7d: %s)",
+			coloredPercent(used),
+			coloredPercent(in.RateLimits.FiveHour.UsedPercentage),
+			coloredPercent(in.RateLimits.SevenDay.UsedPercentage),
+		)
 	}
 
-	used := float64(tokens) * 100 / float64(in.ContextWindow.ContextWindowSize)
-	usedColor := green
-	switch {
-	case used >= 85:
-		usedColor = red
-	case used >= 65:
-		usedColor = yellow
-	}
-
-	fiveHourColor := green
-	switch {
-	case in.RateLimits.FiveHour.UsedPercentage >= 85:
-		fiveHourColor = red
-	case in.RateLimits.FiveHour.UsedPercentage >= 65:
-		fiveHourColor = yellow
-	}
-	sevenDayColor := green
-	switch {
-	case in.RateLimits.SevenDay.UsedPercentage >= 85:
-		sevenDayColor = red
-	case in.RateLimits.SevenDay.UsedPercentage >= 65:
-		sevenDayColor = yellow
-	}
-
-	fmt.Fprintf(&b, " used %s%.0f%%%s (5h: %s%.0f%%%s, 7d: %s%.0f%%%s) at %s%s%s",
-		usedColor, used, reset,
-		fiveHourColor, in.RateLimits.FiveHour.UsedPercentage, reset,
-		sevenDayColor, in.RateLimits.SevenDay.UsedPercentage, reset,
-		yellow, time.Now().Format(time.TimeOnly), reset,
-	)
+	fmt.Fprintf(&b, " at %s%s%s", yellow, time.Now().Format(time.TimeOnly), reset)
 	fmt.Print(b.String())
 	return nil
+}
+
+func coloredPercent(used float64) string {
+	color := green
+	switch {
+	case used >= 85:
+		color = red
+	case used >= 65:
+		color = yellow
+	}
+	return fmt.Sprintf("%s%.0f%%%s", color, used, reset)
 }
