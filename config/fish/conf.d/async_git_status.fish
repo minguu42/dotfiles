@@ -6,12 +6,12 @@ test -n "$TMPDIR"; and set tmpdir (string trim --right --chars=/ -- $TMPDIR)
 set --global _git_prompt_file $tmpdir/fish_git_prompt_$fish_pid
 
 # Git情報をバックグラウンドで取得する。完了するとSIGUSR1が送られてくる
+# コマンド自体は別セッションのワーカーを起動して即座に戻るため、同期実行でよい。
+# `&`によるバックグラウンド実行だとfishの子プロセスが残り、ゾンビプロセスや
+# ターミナルを閉じる際の実行中プロセス警告の原因となる
 function _git_prompt_update
     command --query fish-prompt-git-status; or return
-    command kill $_git_prompt_job 2>/dev/null
-    fish-prompt-git-status $_git_prompt_file $fish_pid "$_git_prompt_info" </dev/null >/dev/null 2>&1 &
-    set --global _git_prompt_job $last_pid
-    builtin disown $_git_prompt_job 2>/dev/null # ジョブ管理から切り離し、終了時のジョブ通知が表示されないようにする
+    fish-prompt-git-status $_git_prompt_file $fish_pid "$_git_prompt_info" </dev/null >/dev/null 2>&1
 end
 
 function _git_prompt_startup --on-event fish_prompt
@@ -38,6 +38,6 @@ function _git_prompt_refresh --on-signal SIGUSR1
 end
 
 function _git_prompt_cleanup --on-event fish_exit
-    command kill $_git_prompt_job 2>/dev/null
-    command rm -f $_git_prompt_file
+    command kill (command cat $_git_prompt_file.pid 2>/dev/null) 2>/dev/null
+    command rm -f $_git_prompt_file $_git_prompt_file.pid
 end

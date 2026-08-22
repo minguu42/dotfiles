@@ -18,6 +18,10 @@ const (
 	boldMagenta = "\033[1;35m"
 )
 
+// シェルの子プロセスとして残るとターミナルを閉じる際の警告対象やゾンビプロセスになるため、
+// 呼び出し時は即座に戻り、実処理は別セッションに切り離したワーカーで行う
+const workerEnv = "_FISH_PROMPT_GIT_STATUS_WORKER"
+
 func main() {
 	if len(os.Args) < 3 {
 		fmt.Fprintln(os.Stderr, "usage: fish-prompt-git-status <file> <parent_pid> <prev_info>")
@@ -32,6 +36,25 @@ func main() {
 	if len(os.Args) > 3 {
 		prevStatus = os.Args[3]
 	}
+
+	if os.Getenv(workerEnv) == "" {
+		spawnWorker()
+		return
+	}
+
+	// 前回のワーカーが実行中であれば停止し、自身のPIDを記録する
+	pidFile := file + ".pid"
+	if data, err := os.ReadFile(pidFile); err == nil {
+		if prev, err := strconv.Atoi(strings.TrimSpace(string(data))); err == nil && prev > 0 {
+			_ = syscall.Kill(prev, syscall.SIGTERM)
+		}
+	}
+	_ = os.WriteFile(pidFile, []byte(strconv.Itoa(os.Getpid())), 0o600)
+	defer func() {
+		if data, err := os.ReadFile(pidFile); err == nil && strings.TrimSpace(string(data)) == strconv.Itoa(os.Getpid()) {
+			_ = os.Remove(pidFile)
+		}
+	}()
 
 	wd := pwd()
 	if _, err := os.Stat(wd); err != nil {
@@ -66,6 +89,18 @@ func main() {
 		os.Exit(1)
 	}
 	_ = syscall.Kill(pid, syscall.SIGUSR1)
+}
+
+func spawnWorker() {
+	exe, err := os.Executable()
+	if err != nil {
+		return
+	}
+	cmd := exec.Command(exe, os.Args[1:]...)
+	cmd.Env = append(os.Environ(), workerEnv+"=1")
+	cmd.SysProcAttr = &syscall.SysProcAttr{Setsid: true}
+	_ = cmd.Start()
+	// 待たずに終了することでワーカーはシェルの子プロセスから切り離される
 }
 
 func operationState(wd string) string {
