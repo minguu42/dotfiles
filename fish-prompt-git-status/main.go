@@ -18,8 +18,6 @@ const (
 	boldMagenta = "\033[1;35m"
 )
 
-// シェルの子プロセスとして残るとターミナルを閉じる際の警告対象やゾンビプロセスになるため、
-// 呼び出し時は即座に戻り、実処理は別セッションに切り離したワーカーで行う
 const workerEnv = "_FISH_PROMPT_GIT_STATUS_WORKER"
 
 func main() {

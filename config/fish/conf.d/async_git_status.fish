@@ -6,9 +6,6 @@ test -n "$TMPDIR"; and set tmpdir (string trim --right --chars=/ -- $TMPDIR)
 set --global _git_prompt_file $tmpdir/fish_git_prompt_$fish_pid
 
 # Git情報をバックグラウンドで取得する。完了するとSIGUSR1が送られてくる
-# コマンド自体は別セッションのワーカーを起動して即座に戻るため、同期実行でよい。
-# `&`によるバックグラウンド実行だとfishの子プロセスが残り、ゾンビプロセスや
-# ターミナルを閉じる際の実行中プロセス警告の原因となる
 function _git_prompt_update
     command --query fish-prompt-git-status; or return
     fish-prompt-git-status $_git_prompt_file $fish_pid "$_git_prompt_info" </dev/null >/dev/null 2>&1
