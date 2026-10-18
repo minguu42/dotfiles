@@ -32,11 +32,7 @@
     "defaultMode": "auto",
     "disableBypassPermissionsMode": "disable"
   },
-  "model": "claude-fable-5[1m]",
   "deniedMcpServers": [
-    {
-      "serverUrl": "https://gmailmcp.googleapis.com/*"
-    },
     {
       "serverUrl": "https://calendarmcp.googleapis.com/*"
     },
@@ -44,7 +40,13 @@
       "serverUrl": "https://drivemcp.googleapis.com/*"
     },
     {
+      "serverUrl": "https://gmailmcp.googleapis.com/*"
+    },
+    {
       "serverUrl": "https://mcp.canva.com/*"
+    },
+    {
+      "serverUrl": "https://mcp.figma.com/*"
     }
   ],
   "hooks": {
@@ -92,9 +94,11 @@
   "spinnerTipsEnabled": false,
   "effortLevel": "xhigh",
   "plansDirectory": "./.claude/plans",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark",
+  "preferredNotifChannel": "notifications_disabled",
+  "autoCompactEnabled": false,
   "showTurnDuration": true,
-  "voiceEnabled": true,
-  "tui": "fullscreen"
+  "voiceEnabled": true
 }
