@@ -1,8 +1,8 @@
 ### 環境変数
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME  "$HOME/.cache"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_DATA_HOME   "$HOME/.local/share"
 set -gx XDG_STATE_HOME  "$HOME/.local/state"
 
@@ -15,7 +15,9 @@ set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS "true"
 set -gx NPM_CONFIG_USERCONFIG                  "$XDG_CONFIG_HOME/npm/npmrc"
 set -gx VP_HOME                                "$XDG_DATA_HOME/vite-plus"
 
+if test -d "$HOME/.docker/bin"; fish_add_path -Pm "$HOME/.docker/bin"; end
 if test -d "$HOME/.local/bin"; fish_add_path -Pm "$HOME/.local/bin"; end
+if test -d "$HOMEBREW_PREFIX/opt/rustup/bin"; fish_add_path -Pm "$HOMEBREW_PREFIX/opt/rustup/bin"; end
 if test -d "$XDG_DATA_HOME/go/bin"; fish_add_path -Pm "$XDG_DATA_HOME/go/bin"; end
 
 ### エイリアス
