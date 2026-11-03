@@ -4,7 +4,14 @@
 [core]
 	editor = nano
 [credential]
-	helper = cache --timeout=8640
+	helper =
+	helper = osxkeychain
+[credential "https://github.com"]
+	helper =
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !gh auth git-credential
 [diff]
 	algorithm = histogram
 	colorMoved = plain
